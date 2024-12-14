@@ -1,0 +1,20 @@
+<section class="sectors-section" id="sectors">
+  <div class="top">
+    <img class="infra2" src="../../../assets/images/infra2.png" alt="" />
+    <div class="sectors-title">
+      <h1 >Targeted Sectors</h1>
+
+    </div>
+  </div>
+  <div class="sectors-images">
+    <div class="image-container" *ngFor="let sector of data.sectors">
+      <img src={{sector.image}} alt="" />
+      <div class="sector-overlay">
+        <div class="animated-overlay">
+          <h3>{{sector.title}}</h3>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</section>

@@ -1,0 +1,169 @@
+@import "../variables/colors";
+@import "../mixins/breakpoints";
+
+.about-section {
+  position: relative;
+  width: 100%;
+  height: 150vh;
+  background: url("../../../images/English V.5_img8.png") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(218, 204, 187, 0),
+    rgba(218, 204, 187, 0.3),
+    rgba(218, 204, 187, 1)
+  );
+  color: #fff;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.infra1 {
+  width: 300px;
+  position: absolute;
+  top: 2rem;
+  left: 0;
+}
+
+.main-title {
+  position: absolute;
+  top: 4rem;
+  right: 0rem;
+  color: $text-color;
+  width: 360px;
+  font-size: 30px;
+  display: flex;
+  text-align: center;
+  justify-content: flex-start;
+  margin-bottom: 3rem;
+  h1 {
+    display: inline;
+    width: fit-content;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    height: 3px;
+    background-color: $text-color;
+  }
+}
+
+.main-text {
+  position: absolute;
+  top: 30rem;
+  color: $text-color;
+  width: 55%;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: justify;
+}
+
+//-----------------------------------responsive style---------------------------------------//
+
+@include breakpoint(mop) {
+  .main-title {
+    top: 12rem;
+    right: 50%;
+    transform: translateX(50%);
+    width: 360px !important;
+    font-size: 18px;
+    justify-content: center;
+    margin-bottom: 6rem;
+    &:after {
+      width: 54%;
+      bottom: 20px;
+    }
+  }
+  .main-text {
+    width: 90%;
+    font-size: 14px;
+    line-height: 16px;
+    top: 25rem;
+  }
+}
+@include breakpoint(sm) {
+  .main-title {
+    top: 20rem;
+    right: 50%;
+    transform: translateX(50%);
+    width: 360px !important;
+    font-size: 22px;
+    justify-content: center;
+    margin-bottom: 6rem;
+    &::after {
+      width: 66%;
+      bottom: 20px;
+    }
+  }
+  .main-text {
+    width: 85%;
+    font-size: 16px;
+    top: 30rem;
+    line-height: 18px;
+  }
+}
+
+@include breakpoint(md) {
+  .main-title {
+    font-size: 28px;
+    top: 12rem;
+    right: 50%;
+    transform: translateX(50%);
+    width: 360px !important;
+    font-size: 24px;
+    justify-content: center;
+    margin-bottom: 3rem;
+    &::after {
+      width: 73%;
+      bottom: 25px;
+    }
+  }
+  .main-text {
+    width: 70%;
+    font-size: 18px;
+    top: 25rem;
+  }
+}
+
+@include breakpoint(lg) {
+  .main-title {
+    top: 14rem;
+    right: 0rem;
+    transform: translateX(0%);
+    width: 360px !important;
+    font-size: 30px;
+    justify-content: flex-start;
+    margin-bottom: 3rem;
+    &::after {
+      width: 100%;
+      bottom: 30px;
+    }
+  }
+  .main-text {
+    width: 55%;
+    font-size: 18px;
+    top: 30rem;
+  }
+}

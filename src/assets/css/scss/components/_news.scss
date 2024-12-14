@@ -1,0 +1,259 @@
+@import "../variables/colors";
+@import "../mixins/breakpoints";
+
+.news-section {
+  position: relative;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  background-color: $secondary-bg-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3rem;
+}
+.top{
+  margin: 6rem;
+}
+
+.infra2 {
+  width: 300px;
+  position: absolute;
+  top: 3rem;
+  left: 0;
+}
+
+.news-title {
+  position: absolute;
+  top: 4rem;
+  right: 0rem;
+  color: $text-color;
+  width: 300px !important;
+  font-size: 30px;
+  display: flex;
+  text-align: center;
+  justify-content: flex-start;
+  margin-bottom: 3rem;
+  h1 {
+    display: inline;
+    width: fit-content;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    height: 3px;
+    background-color: $text-color;
+  }
+}
+
+.news-content {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  // gap: 2rem;
+  row-gap: 2rem;
+  color: $text-color;
+  margin-top: 3rem;
+}
+.news {
+  width: 100%;
+  text-align: justify;
+  font-weight: 600;
+  padding-left: 1rem;
+}
+.news-container{
+  width: 100%;
+}
+.bottom-news{
+  width: 98%;
+  text-align: justify;
+  font-weight: 600;
+  color: $text-color;
+
+}
+.heading {
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 2rem;
+}
+
+.news-img {
+  width: 50%;
+  float: right;
+}
+//-----------------------------------responsive style---------------------------------------//
+@include breakpoint(mop) {
+  .news-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    column-gap: 2rem;
+  }
+  .infra2 {
+    width: 200px;
+    top: 2rem;
+    margin-bottom: 5rem;
+  }
+  .news-title {
+    top: 3rem;
+    right: 50%;
+    transform: translateX(50%);
+    width: 300px !important;
+    font-size: 23px;
+    justify-content: center;
+    margin-bottom: 6rem;
+    &::after {
+      width: 30%;
+    }
+  }
+  .news {
+    order: 2;
+    width: 90%;
+    padding-left: 0rem;
+  }
+  .bottom-news{
+    width: 90%;
+  }
+  .heading {
+    font-size: 16px;
+    margin-bottom: 2rem;
+  }
+  .news-img {
+    order: 1;
+    width: 90%;
+  }
+}
+
+@include breakpoint(sm) {
+  .news-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    column-gap: 2rem;
+  }
+  .infra2 {
+    width: 250px;
+    top: 2rem;
+    margin-bottom: 5rem;
+  }
+  .news-title {
+    position: absolute;
+    top: 4rem;
+    right: 50%;
+    transform: translateX(50%);
+    width: 300px !important;
+    font-size: 25px;
+
+    justify-content: center;
+
+    &::after {
+      width: 32%;
+    }
+  }
+  .news {
+    order: 2;
+    width: 90%;
+    padding-left: 0rem;
+  }
+  .bottom-news{
+    width: 90%;
+  }
+  .heading {
+    font-size: 20px;
+    margin-bottom: 2rem;
+  }
+  .news-img {
+    order: 1;
+
+    width: 90%;
+  }
+}
+
+@include breakpoint(md) {
+  .news-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .infra2 {
+    width: 300px;
+    top: 2rem;
+    margin-bottom: 5rem;
+  }
+  .news-title {
+    top: 3rem;
+    right: 0rem;
+    transform: translateX(0%);
+    width: 300px !important;
+    font-size: 30px;
+    justify-content: flex-start;
+    margin-bottom: 3rem;
+    &::after {
+      width: 100%;
+    }
+  }
+  .news {
+    order: 1;
+    width: 90%;
+    padding-left: 1rem;
+  }
+  .bottom-news{
+    width: 90%;
+  }
+  .heading {
+    font-size: 22px;
+    margin-bottom: 2rem;
+  }
+  .news-img {
+    order: 2;
+    width: 40%;
+  }
+}
+
+@include breakpoint(lg) {
+  .news-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .infra2 {
+    width: 300px;
+    top: 3rem;
+    margin-bottom: 2rem;
+  }
+  .news-title {
+    top: 4rem;
+    right: 0rem;
+    transform: translateX(0%);
+    width: 300px !important;
+    font-size: 30px;
+    justify-content: flex-start;
+    margin-bottom: 3rem;
+
+    &::after {
+      width: 100%;
+    }
+  }
+  .news {
+    order: 1;
+    width: 50%;
+    padding-left: 1rem;
+  }
+  .bottom-news{
+    width: 98%;
+  }
+  .heading {
+    font-size: 22px;
+    margin-bottom: 2rem;
+  }
+  .news-img {
+    order: 2;
+    width: 50%;
+  }
+}
+

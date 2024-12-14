@@ -1,0 +1,18 @@
+<section class="objectives-section" id="objectives">
+  <div class="top">
+    <img class="infra2" src="../../../assets/images/infra2.png" alt="" />
+    <div class="objectives-title">
+      <h1>Objectives</h1>
+    </div>
+  </div>
+  <owl-carousel-o [options]="customOptions" class="carousel">
+    <ng-template carouselSlide *ngFor="let objective of data.objectives">
+      <img src="{{ objective.image }}" alt="img" />
+      <div class="caro-overlay">
+        <div class="after">
+          <h4>{{ objective.title }}</h4>
+        </div>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</section>
