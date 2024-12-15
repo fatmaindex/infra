@@ -1,0 +1,145 @@
+@import "../mixins/breakpoints";
+@import "../variables/colors";
+
+.header {
+  background-color: $primary-bg-color;
+  padding: 50px 0 70px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.logoImg {
+  width: 495px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 100%;
+
+  a {
+    width: 100%;
+    text-decoration: none;
+    color: $white-color;
+    position: relative;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: right;
+    display: block;
+    margin-bottom: 2px;
+    transition: transform 0.3s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: -100%;
+      bottom: 0px;
+      width: 200%;
+      height: 0.5px;
+      background-color: $white-color;
+      transform-origin: left;
+      transition: background-color 0.3s ease;
+    }
+    &:hover {
+      color: $highlight-color;
+    }
+    &:hover::after {
+      background-color: $highlight-color;
+    }
+  }
+}
+
+.header-icons {
+  position: relative;
+  margin-top: 10rem;
+  right: 1.5rem !important;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1000;
+  background-color: $text-color;
+  padding: 5px 5px;
+  border-radius: 5px;
+  img {
+    width: 20px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  img:hover {
+    transform: scale(1.2);
+  }
+}
+
+//----------------------------------------------responsive header----------------------------------//
+
+@include breakpoint(mop) {
+  .header {
+    padding: 15px 0;
+    justify-content: center;
+  }
+  .logoImg {
+    width: 130px;
+    margin-bottom: 10px;
+  }
+  .nav-menu a {
+    font-size: 12px;
+  }
+
+}
+@include breakpoint(sm) {
+  .header {
+    padding: 20px 0;
+    justify-content: center;
+  }
+  .logoImg {
+    width: 150px;
+    margin-bottom: 10px;
+  }
+  .nav-menu a {
+    font-size: 16px;
+  }
+}
+
+@include breakpoint(md) {
+  .header {
+    justify-content: space-between;
+  }
+  .logoImg {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+  .nav-menu a {
+    font-size: 20px;
+  }
+
+}
+
+@include breakpoint(lg) {
+  .header {
+    justify-content: space-between;
+  }
+  .logoImg {
+    width: 210px;
+    margin-bottom: 40px;
+  }
+  .nav-menu a {
+    font-size: 20px;
+  }
+
+}
